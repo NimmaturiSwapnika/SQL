@@ -1,0 +1,16 @@
+/* 1. Alphabetical order of names
+2. Beside the names, the first letter of occupation in parenthesis
+3. Count the no.of times each occupation is present and list it
+*/
+
+
+
+SELECT CONCAT(name, "(", left(Occupation, 1), ")") 
+FROM Occupations
+ORDER BY name ASC;
+
+
+SELECT CONCAT("There are a total of ", COUNT(name), " ", lower(Occupation), "s. ")
+FROM Occupations
+GROUP BY Occupation
+ORDER BY Count(occupation) ASC, occupation ASC;
