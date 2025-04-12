@@ -1,0 +1,21 @@
+
+-- 1. Using power function
+
+SELECT 
+ROUND(
+    SQRT(
+        POWER((Max(Lat_n) - Min(Lat_n)), 2) +
+        POWER((Max(Long_w) - Min(Long_w)), 2)
+), 4)
+FROM STATION;
+
+
+
+
+-- 2. Multiplying twice
+
+SELECT ROUND(
+  SQRT(
+    (max(Lat_n) - min(Lat_n)) * (max(Lat_n) - min(Lat_n)) + (max(Long_w) - min(Long_w)) * (MAX(Long_w) - Min(Long_w))
+), 4) 
+FROM STATION;
